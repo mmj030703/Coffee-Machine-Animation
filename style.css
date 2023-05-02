@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.coffee-machine-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100vw;
+  height: 90vh;
+}
+
+.coffee-machine {
+  position: absolute;
+  width: 300px;
+  height: 275px;
+}
+
+/********************** Header Section ******************/
+
+.coffee-machine .coffee-header {
+  width: 296px;
+  height: 75px;
+  background-color: #cec9c9;
+  box-shadow: 0 0 3px grey;
+  border-radius: 0 0 15px 15px;
+  position: relative;
+}
+
+.coffee-machine .coffee-header .button {
+  position: absolute;
+  width: 23px;
+  height: 24px;
+  top: 20px;
+  left: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.coffee-machine .coffee-header .button::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #555555;
+  left: 7px;
+  bottom: -8.3px;
+}
+
+.coffee-machine .coffee-header .button-2 {
+  left: 43px;
+}
+
+.coffee-machine .coffee-header .display {
+  position: absolute;
+  top: calc(25% - 6px);
+  /* left: calc(50% - 18.3px); */
+  left: calc(50% - 22.3px);
+  width: 42px;
+  height: 45px;
+  border: 3px solid rgb(33, 124, 199);
+  background-color: rgb(74, 179, 228);
+  border-radius: 50%;
+}
+
+.coffee-machine .coffee-header .ventilation-outlets {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  width: 100%;
+  right: 3px;
+}
+
+.coffee-machine .coffee-header .ventilation-outlets .outlet {
+  width: 7px;
+  height: 18.2px;
+  background-color: #4d4b4b;
+  margin: 8px 3px;
+}
+
+/********************** Header Section ******************/
+
+/********************** Medium Section ******************/
+.coffee-machine .coffee-medium {
+  width: 90%;
+  height: 166px;
+  background-color: #b4b0b0;
+  margin: 0px auto;
+  z-index: -1;
+  position: relative;
+}
+
+.coffee-machine .coffee-medium .coffee-nozzle {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 28px);
+  width: 55px;
+  height: 55px;
+}
+
+.coffee-machine .coffee-medium .coffee-nozzle .topbar {
+  width: 100%;
+  height: 22px;
+  background-color: #000;
+}
+
+.coffee-machine .coffee-medium .coffee-nozzle .below-nozzle {
+  width: 80%;
+  height: 18px;
+  background-color: #000;
+  margin: 0px auto;
+  border-radius: 0 0 10px 10px;
+}
+
+.coffee-machine .coffee-medium .coffee-nozzle .below-nozzle::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: calc(50% - 4px);
+  width: 8.5px;
+  height: 10px;
+  background-color: #000;
+}
+
+.coffee-machine .coffee-medium .coffee-nozzle .below-nozzle::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: calc(50% - 4px);
+  width: 8.5px;
+  opacity: 0;
+  height: 55px;
+  background-color: #812e2e;
+  z-index: 1;
+  animation: coffee-out 4s ease infinite forwards;
+}
+
+@keyframes coffee-out {
+  0% {
+    opacity: 1;
+    height: 0%;
+  }
+  10% {
+    opacity: 1;
+    height: 0%;
+  }
+  100% {
+    opacity: 1;
+    height: 180%;
+  }
+}
+
+.coffee-machine .coffee-medium .coffee-nozzle .handle {
+  position: absolute;
+  top: 17px;
+  left: calc(63px);
+  width: 55px;
+  height: 20px;
+  background-color: #000;
+}
+
+.coffee-machine .coffee-medium .coffee-nozzle .handle::before {
+  content: "";
+  position: absolute;
+  top: 7.5px;
+  left: -20px;
+  width: 22px;
+  height: 5px;
+  background-color: #6e6c6c;
+  z-index: -1;
+}
+
+.coffee-machine .coffee-medium .below-background {
+  position: absolute;
+  bottom: 0px;
+  left: 5%;
+  width: 90%;
+  height: 105px;
+  border-radius: 22px 22px 0 0;
+  background-color: #776f6f;
+}
+
+.coffee-machine .coffee-medium .cup {
+  position: absolute;
+  bottom: 15.2px;
+  left: calc(50% - 33px);
+  width: 25%;
+  height: 45px;
+  border-radius: 0px 0px 150px 150px / 0 0 250px 250px;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.coffee-machine .coffee-medium .cup .cup-clouds {
+  position: absolute;
+  top: 0px;
+  left: 4px;
+  width: 8px;
+  height: 16px;
+  border-radius: 50px;
+  opacity: 0;
+  background-color: rgb(209, 192, 192);
+  animation: clouds-up 1s ease-out 1.8s infinite;
+  z-index: -1;
+}
+
+.coffee-machine .coffee-medium .cup .cloud-2 {
+  left: 20px;
+  animation-delay: 1.9s;
+  transform: translateY(10%);
+}
+
+.coffee-machine .coffee-medium .cup .cloud-3 {
+  left: 52px;
+  animation-delay: 1.8s;
+  transform: translateY(5%);
+}
+
+@keyframes clouds-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-270%);
+  }
+}
+
+.coffee-machine .coffee-medium .cup::after {
+  content: "";
+  position: absolute;
+  bottom: 10.9px;
+  left: calc(50% + 15px);
+  width: 35%;
+  height: 17px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  z-index: ;
+}
+
+.coffee-machine .coffee-medium .below-plate {
+  position: absolute;
+  bottom: 0px;
+  left: -3.2%;
+  width: 285px;
+  height: 15px;
+  background-color: #4baec0;
+}
+
+/********************** Medium Section ******************/
+
+/********************** Footer Section ******************/
+.coffee-machine .coffee-footer {
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  height: 30px;
+  background-color: #000;
+}
+/********************** Footer Section ******************/
